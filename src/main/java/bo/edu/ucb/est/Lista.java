@@ -12,20 +12,14 @@ public class Lista {
         tamanio++;
         if (primerElemento == null) {
             primerElemento = alumno;
-        } else {
-            // Buscamos el ultimo elemento de la lista
+        } else { // Recorremos la lista para agregar al final el nuevo alumno
             Alumno nodoActual = primerElemento;
-            do {
-                // Verificamos si estamos al final de la lista.
+            while (nodoActual != null) {
                 if (nodoActual.getApuntadorASiguiente() == null) {
-                    // Agregamos el alumno al final
                     nodoActual.setApuntadorASiguiente(alumno);
-                } else {
-                    nodoActual = nodoActual.getApuntadorASiguiente();
                 }
-                
-            } while (nodoActual.getApuntadorASiguiente() == null);
-            // Itero mientras no este en el ultimo nodo.
+                nodoActual = nodoActual.getApuntadorASiguiente();
+            }
         }
     }
 
@@ -37,6 +31,56 @@ public class Lista {
         }
         System.out.println( " |. ");
     }
+
+
+    public Alumno obtener(int posicion) {
+        Alumno resultado = null;
+        if (tamanio != 0) {
+           // FOR INICIALIZAR ; CONDICIÓN PARA SEGUIR EN BUCLE; LUEGO CADA ITERACION 
+            int i = 0;
+            for (Alumno nodoActual = primerElemento ; nodoActual != null ; nodoActual = nodoActual.getApuntadorASiguiente() ) {
+                if (posicion == i) {
+                    resultado = nodoActual;
+                    break;
+                }
+                i++;
+            }
+        }
+        return resultado;
+    }
+
+    public void eliminar(int posicion) {
+        if (tamanio != 0) {
+           // FOR INICIALIZAR ; CONDICIÓN PARA SEGUIR EN BUCLE; LUEGO CADA ITERACION 
+            int i = 0;
+            Alumno nodoAnterior = null;
+            //malloc(nodoAnterior)
+            for (Alumno nodoActual = primerElemento ; nodoActual != null ; nodoActual = nodoActual.getApuntadorASiguiente() ) {
+                if (posicion == i) {
+                    // Eliminar el nodo actual
+                    if ( nodoAnterior == null) { // Significa que estoy eliminando el primer elemento
+                        primerElemento = nodoActual.getApuntadorASiguiente();
+                    } else { // Si tenemos nodoAnterior es un elemento de en medio o el utlimo.
+                        nodoAnterior.setApuntadorASiguiente(nodoActual.getApuntadorASiguiente()); 
+                        // free(nodoActual);
+                    }
+                    break;
+                }
+                i++;
+                nodoAnterior = nodoActual;
+            }
+        }
+    }
+
+    public int metodo (int x , int y) {
+        if (y == 0) {
+            return 1;
+        } else {
+            return metodo (x , y -1 ) * x;
+        }
+    }
+
+    // metodo (2,3) = 8
 
     public int getTamanio() {
         return tamanio;
