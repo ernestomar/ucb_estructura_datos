@@ -1,12 +1,34 @@
 package bo.edu.ucb.est;
 
+import bo.edu.ucb.est.listaV2.Node;
+import bo.edu.ucb.est.listaV2.SimpleList;
+import bo.edu.ucb.est.listaV2.Student;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+
+    public static void main( String[] args ) {
+        Student student1 = new Student("Juan ");
+        Node node1 = new Node(student1, null);
+        Student student2 = new Student("Pedro ");
+        Node node2 = new Node(student2, null);
+        Student student3 = new Student("Maria ");
+        Node node3 = new Node(student3, null);
+
+        SimpleList list = new SimpleList();
+        list.add(node1);
+        list.add(node2);
+        list.add(node3);
+
+        list.print();
+    }
+
+ //   public static void main( String[] args )
+    public static void listaSimple()
     {
        Lista listaAlumnos  = new Lista();
        
