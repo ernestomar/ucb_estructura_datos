@@ -1,8 +1,10 @@
 package bo.edu.ucb.est;
 
+import java.util.Date;
 import bo.edu.ucb.est.listaV2.Node;
 import bo.edu.ucb.est.listaV2.SimpleList;
 import bo.edu.ucb.est.listaV2.Student;
+import bo.edu.ucb.est.listaV2.Teacher;
 
 /**
  * Hello world!
@@ -12,19 +14,41 @@ public class App
 {
 
     public static void main( String[] args ) {
-        Student student1 = new Student("Juan ");
-        Node node1 = new Node(student1, null);
-        Student student2 = new Student("Pedro ");
-        Node node2 = new Node(student2, null);
-        Student student3 = new Student("Maria ");
-        Node node3 = new Node(student3, null);
+        Teacher teacher1 = new Teacher("Orlando Rivera", "Ing. de Sistemas ");
+        Teacher teacher2 = new Teacher("Miguel Villarroel", "Lic. en Informatica");
+        Node<Teacher> nodeTeacher1 = new Node<Teacher> (teacher1, null);
+        Node<Teacher> nodeTeacher2 = new Node<Teacher> (teacher2, null);
+/*
+        SimpleList teacherList = new SimpleList();
+        teacherList.add(nodeTeacher1);
+        teacherList.add(nodeTeacher2);
+        teacherList.print();
+*/
+        System.out.println(" ====================  ");
 
-        SimpleList list = new SimpleList();
+        Student student1 = new Student("Juan ");
+        Student student2 = new Student("Pedro ");
+        Student student3 = new Student("Maria ");
+
+        Node<Student> node1 = new Node<Student>(student1, null);
+        Node<Student> node2 = new Node<Student>(student2, null);
+        Node<Student> node3 = new Node<Student>(student3, null);
+
+        SimpleList<Student> list = new SimpleList<>();
         list.add(node1);
         list.add(node2);
         list.add(node3);
-
+//        list.add(nodeTeacher1);  No es posible debido a los generics
+//        list.add(nodeTeacher2);  No es posible debido a los generics
         list.print();
+
+        SimpleList<Date> dateList = new SimpleList<>();
+        Node<Date> dateNode1 = new Node<>(new Date(), null);
+        dateList.add(dateNode1);
+        Node<Date> dateNode2 = new Node<>(new Date(), null);
+        dateList.add(dateNode2);
+
+        dateList.print();
     }
 
  //   public static void main( String[] args )

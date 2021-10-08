@@ -1,6 +1,6 @@
 package bo.edu.ucb.est.listaV2;
 
-public class Student extends Object {
+public class Student {
 
     private String name;
     // En el ejemplo con alumno, aquí tenía que ponber el apuntador a siguiente 
@@ -19,6 +19,6 @@ public class Student extends Object {
 
     @Override
     public String toString() {
-        return "Student["+ name + "]";
+        return "Student ["+ name + "]";
     }
 }

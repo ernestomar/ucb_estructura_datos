@@ -1,7 +1,7 @@
 package bo.edu.ucb.est.listaV2;
 
-public class SimpleList {
-    private Node first;
+public class SimpleList <N> {
+    private Node<N> first;
     private int size;
 
     public SimpleList() {
@@ -13,12 +13,12 @@ public class SimpleList {
         return size;
     }
 
-    public void add(Node node) {
+    public void add(Node<N> node) {
         size++;
         if (first == null) {
             first = node;
         } else {
-            for (Node current = first ; current != null; current = current.getNext() ) {
+            for (Node<N> current = first ; current != null; current = current.getNext() ) {
                 if (current.getNext() == null ) { // es el ultimo nodo
                     current.setNext(node); // Enlazo el ultimo nodo.
                     break;

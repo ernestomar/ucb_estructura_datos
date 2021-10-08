@@ -1,28 +1,28 @@
 package bo.edu.ucb.est.listaV2;
 
-public class Node {
+public class Node <T> {
 
-    private Student data;
-    private Node next;   // apuntadorASiguiente (antes en Alumno)
+    private T data;
+    private Node<T> next;   // apuntadorASiguiente (antes en Alumno)
     
-    public Node(Student data, Node next) {
+    public Node(T data, Node<T> next) {
         this.data = data;
         this.next = next;
     }
 
-    public Student getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Student data) {
+    public void setData(T data) {
         this.data = data;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
 }
