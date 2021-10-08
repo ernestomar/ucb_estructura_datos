@@ -35,5 +35,10 @@ public class SimpleList <T> {
        System.out.println(" |. ");
     }
 
+    // public getData(int i) //obtener un elemento
+    // public contains(T data) // Retorna true si la lista contiene el elemento.
+    // public remove(T data) // Remueve el elemento
+    // public remove(int i) // Remueve el elemento de la posicion i especifgicada.
+
     
 }
