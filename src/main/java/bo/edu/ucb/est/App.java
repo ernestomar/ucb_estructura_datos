@@ -24,15 +24,17 @@ public class App
 
         System.out.println(" ====================  ");
 
-        Student student1 = new Student("Juan ");
-        Student student2 = new Student("Pedro ");
-        Student student3 = new Student("Maria ");
+        Student student1 = new Student("Juan");
+        Student student2 = new Student("Pedro");
+        Student student3 = new Student("Maria");
 
         SimpleList<Student> list = new SimpleList<>();
         list.add(student1);
         list.add(student2);
         list.add(student3);
         list.print();
+
+        System.out.println("LA lista contiene a Juan: " + list.contains(new Student("Juan")));
 
         SimpleList<Date> dateList = new SimpleList<>();
         dateList.add(new Date());

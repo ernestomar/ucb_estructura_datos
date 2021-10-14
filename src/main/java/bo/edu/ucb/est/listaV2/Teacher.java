@@ -31,4 +31,28 @@ public class Teacher {
         return "Teacher[" + this.fullName + " -  " + this.profession + " ] ";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+
+        if ( obj != null && obj instanceof Teacher ) {
+            Teacher other = (Teacher) obj; 
+            if (other.fullName.equals(this.fullName)) {
+                result = true;
+            }
+        } 
+
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        if (this.fullName != null) {
+            return this.fullName.hashCode();
+        } else {
+            return 0;
+        }   
+        
+    }
+
 }

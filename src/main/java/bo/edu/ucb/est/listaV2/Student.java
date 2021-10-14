@@ -21,4 +21,28 @@ public class Student {
     public String toString() {
         return "Student ["+ name + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+
+        if ( obj != null && obj instanceof Student ) {
+            Student other = (Student) obj; 
+            if (other.name.equals(this.name)) {
+                result = true;
+            }
+        } 
+
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        if (this.name != null) {
+            return this.name.hashCode();
+        } else {
+            return 0;
+        }   
+        
+    }
 }

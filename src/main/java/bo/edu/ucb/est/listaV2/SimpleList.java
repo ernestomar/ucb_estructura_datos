@@ -35,6 +35,17 @@ public class SimpleList <T> {
        System.out.println(" |. ");
     }
 
+    public boolean contains(T data) {
+        boolean result = false;
+        for (Node current = first; current != null ; current = current.getNext()) {
+            if ( current.getData().equals(data)) {
+                result = true;
+                break;
+            }
+        } 
+        return result;
+    }
+
     // public getData(int i) //obtener un elemento
     // public contains(T data) // Retorna true si la lista contiene el elemento.
     // public remove(T data) // Remueve el elemento
